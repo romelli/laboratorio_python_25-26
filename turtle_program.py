@@ -1,34 +1,39 @@
-#
-# File: main.py
-#
-# Author: E.Romelli
-#
-# Date: 2026/03/04
-#
-# Version: 1.0
-#
-# Description: My First Project Program to print "Hello, World!".
-#
+import turtle
 
-import turtle               # Importo modulo turtle
+def draw_rectangle(tartaruga, lunghezza, altezza):
+  '''Disegno un rettangolo con la tartaruga'''
 
-window = turtle.Screen()    # Creo una finestra dove lavorare
+  for i in range(2):     # disegna 2 lati 2 volte
+    tartaruga.forward(lunghezza)
+    tartaruga.left(90)
+    tartaruga.forward(altezza)
+    tartaruga.left(90)
 
-raffaello = turtle.Turtle() # Creo una tartaruga e la assegno alla variabile "raffaello"
-raffaello.color('red')
+def draw_square(my_turtle, step):
+  '''Disegno un quadrato con la tartaruga'''
+  
+  draw_rectangle(my_turtle, step, step)
 
-for i in 'ciao':
-    print(i)
-    raffaello.forward(50)                  # movimenti per disegnare quadrato
-    raffaello.left(90)                     # con raffaello
+def somma(a,b):
+  '''sommo due numeri'''
+  
+  ris = a+b
+  
+  return ris
 
-print('casa' == 'Casa')
+window = turtle.Screen()               # istanza "window" di Screen
+window.bgcolor("lightgreen")           # imposto lo stato della "window"
+# window.title("Raffaello & Donatello")
 
+raffaello = turtle.Turtle()            # Istanza di Turtle chiamata raffaello
+raffaello.color("red")                 # attributi per lo stato di raffaello    
+raffaello.pensize(5)
 
-#donatello = turtle.Turtle()
-#donatello.color('violet')
-#donatello.forward(100)
-#donatello.right(90)
-#donatello.forward(50)
+#draw_square(raffaello, 50)
+risultato_somma = somma(7,6)
+print(risultato_somma)
 
-window.mainloop()           # Attende che l'utente chiuda la finestra di gioco o fermi il programma
+raffaello.right(180)                   # giro e sposto dall'origine raffaello
+raffaello.forward(80)                  # 
+
+window.mainloop()                      # Attendo chiusura finestra di gioco o stop del programma

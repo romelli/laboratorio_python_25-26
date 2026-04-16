@@ -1,16 +1,16 @@
-def is_pari(n):
-    '''controllo se il numero è pari'''
+import json
 
-    if n%2 == 0:
-        return True
-    else:
-        return False
+data = {
+  "Paolino Paperino": {
+      "giorno": 9,
+      "mese": "giugno",
+      "anno": 1934,
+      "età": 89,
+      "sesso": "M",
+      "mail": "paolino.paperin0@disney.org"}
+  }
 
-def is_pari_flex(n):
+with open('mio_dizionario.json', 'r') as f:
+    dati_paperino = json.load(f)
 
-    return n%2 == 0
-
-res = is_pari_flex(4)
-print(res)
-res = is_pari_flex(5)
-print(res)
+print(dati_paperino)
